@@ -61,20 +61,15 @@ describe('Play Authenticated Live Video (Logged In / Authenticated)', () => {
 
     it('Select a video in the carousel', async function() { 
         this.timeout(30000);
-        await library.sendKey('select', 0.5);
         while(!await library.verifyIsScreenLoaded({"elementData" :[{ "using": "text", "value": "WATCH NOW"}]})) {
             await library.sendKey('right', 1);
         }
-        await library.sendKey('select', 0.5);
         await library.sendKey('select', 0.5);
     });
 
     it('Check video has started', async function() { 
         this.timeout(10000);
         const res = await library.verifyIsPlaybackStarted();
-        await library.sleep(3000);
-        if(res === false) await library.sendKey('play', 0.5);
-        res = await library.verifyIsPlaybackStarted();
         expect(res).equal(true);
     });
 

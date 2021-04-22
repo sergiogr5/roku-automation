@@ -10,6 +10,7 @@
     "axios": "0.19.1",
     "chai": "4.2.0",
     "form-data": "3.0.0",
+    "minimist": "^1.2.5",
     "mocha": "7.0.1",
     "mochawesome": "^6.2.2",
     "nock": "12.0.1"
